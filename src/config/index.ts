@@ -1,7 +1,7 @@
 import dotenv from "dotenv"
 import path from "path"
 
-dotenv.config({path: path.join(__dirname, '../.env')})
+dotenv.config({path: path.join(__dirname, '../../.env')})
 
 export default {
     logDir: process.env.LOG_DIR || "./logs",

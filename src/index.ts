@@ -2,6 +2,7 @@ import logger from "./util/logger";
 
 import { readCSVFile } from "./util/parser";
 import { readJSONFile } from "./util/parsers/jsonParser";
+import { readXMLFile } from "./util/parsers/xmlParser";
 
 
 async function main() {
@@ -10,12 +11,25 @@ async function main() {
     // for each data row, log the row
     data.forEach((row) => logger.info(row));
     */
+
+    /*
    try {
        const data = await readJSONFile("src/data/book.json");
-       console.log('Read data:', data);
+       data.forEach((row) => {
+           logger.info(row);
+       });
    } catch (error) {
        logger.error("Error reading JSON file:", error);
    }
+       */
+       
+/*
+    const data = await readXMLFile("src/data/toy.xml");
+    data.forEach((row) => {
+        logger.info(row);
+    }
+    ); 
+    */
 }
 
 main();

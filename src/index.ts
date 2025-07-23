@@ -2,7 +2,7 @@ import logger from "./util/logger";
 import { CakeBuilder } from "./model/builders/cake.builder";
 import { Cake } from "model/Cake.model";
 
-import { readCSVFile } from "./util/parser";
+import { readCSVFile } from "./util/parsers/csvParser";
 import { readXMLFile } from "./util/parsers/xmlParser";
 
 

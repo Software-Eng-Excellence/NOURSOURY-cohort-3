@@ -2,28 +2,35 @@ import logger from "./util/logger";
 import { CakeBuilder } from "./model/builders/cake.builder";
 import { Cake } from "model/Cake.model";
 
-logger.info('App started');
+import { readCSVFile } from "./util/parser";
+import { readXMLFile } from "./util/parsers/xmlParser";
+
+
 async function main() {
-    const cakeBuilder = new CakeBuilder();
-    const cake = cakeBuilder
-        .setType("type")
-        .setFlavor("flavor")
-        .setFilling("filling")
-        .setSize(10)
-        .setLayers(2)
-        .setFrostingType("frostingType")
-        .setFrostingFlavor("frostingFlavor")
-        .setDecorationType("decorationType")
-        .setDecorationColor("decorationColor")
-        .setCustomMessage("customMessage")
-        .setShape("shape")
-        .setAllergies("allergies")
-        .setSpecialIngredients("specialIngredients")
-        .setPackagingType("packagingType")
-        .build();
-  
-  console.log(cake);
-  
+    /*
+    const data = await readCSVFile("src/data/cake-orders.csv", true);
+    // for each data row, log the row
+    data.forEach((row) => logger.info(row));
+    */
+
+    /*
+   try {
+       const data = await readJSONFile("src/data/book.json");
+       data.forEach((row) => {
+           logger.info(row);
+       });
+   } catch (error) {
+       logger.error("Error reading JSON file:", error);
+   }
+       */
+       
+/*
+    const data = await readXMLFile("src/data/toy.xml");
+    data.forEach((row) => {
+        logger.info(row);
+    }
+    ); 
+    */
 }
 
 main();

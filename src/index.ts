@@ -1,6 +1,6 @@
 import logger from "./util/logger";
 
-import { readCSVFile } from "./util/parser";
+import { readCSVFile } from "./util/parsers/csvParser";
 import { readJSONFile } from "./util/parsers/jsonParser";
 import { readXMLFile } from "./util/parsers/xmlParser";
 

@@ -4,9 +4,9 @@ import { readJSONFile, writeJSONFile } from '../src/util/parsers/jsonParser';
 import { promises as fs } from 'fs';
 import path from 'path';
 
-const tempFilePath = path.join(__dirname, '../src/data/temp-output.json');
-const validJSONFilePath = path.join(__dirname, '../src/data/book.json');
-const invalidJSONFilePath = path.join(__dirname, '../src/data/bad.json');
+const tempFilePath = path.join(__dirname, '../tests/data/temp-output.json');
+const validJSONFilePath = path.join(__dirname, '../tests/data/book.json');
+const invalidJSONFilePath = path.join(__dirname, '../tests/data/bad.json');
 
 afterAll(async () => {
   // Cleanup the temp file if it exists

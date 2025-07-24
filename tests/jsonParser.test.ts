@@ -4,9 +4,9 @@ import { readJSONFile, writeJSONFile } from '../src/util/parsers/jsonParser';
 import { promises as fs } from 'fs';
 import path from 'path';
 
-const tempFilePath = path.join(__dirname, '../src/data/temp-output.json');
-const validJSONFilePath = path.join(__dirname, '../src/data/book.json');
-const invalidJSONFilePath = path.join(__dirname, '../src/data/bad.json');
+const tempFilePath = path.join(__dirname, '../tests/data/temp-output.json');
+const validJSONFilePath = path.join(__dirname, '../tests/data/book.json');
+const invalidJSONFilePath = path.join(__dirname, '../tests/data/bad.json');
 
 afterAll(async () => {
   // Cleanup the temp file if it exists
@@ -17,28 +17,28 @@ afterAll(async () => {
   }
 });
 
-it('reads an array of arrays and converts all elements to strings', async () => {
-    const filePath = path.join(__dirname, '../src/data/arrayOfArrays.json');
-    const sampleArray = [
-      ['name', 'age', 'city'],
-      ['Alice', 30, 'New York'],
-      ['Bob', 25, null]
-    ];
-    await fs.writeFile(filePath, JSON.stringify(sampleArray), 'utf8');
-  
-    const result = await readJSONFile(filePath);
-  
-    expect(result).toEqual([
-      ['name', 'age', 'city'],
-      ['Alice', '30', 'New York'],
-      ['Bob', '25', '']
-    ]);
-  
-    await fs.unlink(filePath); // cleanup
-  });
-  
+
 
 describe('jsonParser', () => {
+  it('reads an array of arrays and converts all elements to strings', async () => {
+      const filePath = path.join(__dirname, '../tests/data/arrayOfArrays.json');
+      const sampleArray = [
+        ['name', 'age', 'city'],
+        ['Alice', 30, 'New York'],
+        ['Bob', 25, null]
+      ];
+      await fs.writeFile(filePath, JSON.stringify(sampleArray), 'utf8');
+    
+      const result = await readJSONFile(filePath);
+    
+      expect(result).toEqual([
+        ['name', 'age', 'city'],
+        ['Alice', '30', 'New York'],
+        ['Bob', '25', '']
+      ]);
+    
+      await fs.unlink(filePath); // cleanup
+    });
   it('reads a valid JSON file (array of objects) and returns 2D array', async () => {
     const result = await readJSONFile(validJSONFilePath);
     expect(Array.isArray(result)).toBe(true);

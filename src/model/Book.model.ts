@@ -1,32 +1,27 @@
 import { Item, ItemCategory } from "./item.model";
 
+type BookGenre = "Science Fiction" | "Thriller" | "Biography" | "Mystery" | "Fantasy" | "Romance" | "Historical Fiction";
+
 export class Book implements Item {
-    private orderId: string;
     private bookTitle: string;
     private author: string;
-    private genre: string;
+    private genre: BookGenre;
     private format: string;
     private language: string;
     private publisher: string;
     private specialEdition: string;
     private packaging: string;
-    private price: number;
-    private quantity: number;
 
     constructor(
-        orderId: string,
         bookTitle: string,
         author: string,
-        genre: string,
+        genre: BookGenre,
         format: string,
         language: string,
         publisher: string,
         specialEdition: string,
         packaging: string,
-        price: number,
-        quantity: number
     ) {
-        this.orderId = orderId;
         this.bookTitle = bookTitle;
         this.author = author;
         this.genre = genre;
@@ -35,8 +30,6 @@ export class Book implements Item {
         this.publisher = publisher;
         this.specialEdition = specialEdition;
         this.packaging = packaging;
-        this.price = price;
-        this.quantity = quantity;
     }
 
     getCategory(): ItemCategory {
@@ -44,16 +37,13 @@ export class Book implements Item {
     }
 
     // Getters for the properties
-    getOrderId(): string {
-        return this.orderId;
-    }
     getBookTitle(): string {
         return this.bookTitle;
     }
     getAuthor(): string {
         return this.author;
     }
-    getGenre(): string {
+    getGenre(): BookGenre {
         return this.genre;
     }
     getFormat(): string {
@@ -70,11 +60,5 @@ export class Book implements Item {
     }
     getPackaging(): string {
         return this.packaging;
-    }
-    getPrice(): number {
-        return this.price;
-    }
-    getQuantity(): number {
-        return this.quantity;
     }
 }

@@ -1,6 +1,6 @@
 import { Item, ItemCategory } from "./Item.model";
 
-type CakeType = "birthday" | "wedding" | "anniversary" | "graduation" | "baby_shower" | "custom";
+export type CakeType = "birthday" | "wedding" | "anniversary" | "graduation" | "baby_shower" | "custom";
 
 export class Cake implements Item {
     private type: CakeType;

@@ -1,8 +1,8 @@
 import logger from "../../util/logger";
-import { Cake } from "../Cake.model";
+import { Cake, CakeType } from "../Cake.model";
 
 export class CakeBuilder {
-    private type!: string;
+    private type!: CakeType;
     private flavor!: string;
     private filling!: string;
     private size!: number;
@@ -17,7 +17,7 @@ export class CakeBuilder {
     private specialIngredients!: string;
     private packagingType!: string;
   
-    setType(type: string): CakeBuilder {
+    setType(type: CakeType): CakeBuilder {
       this.type = type;
       return this;
     }

@@ -1,4 +1,4 @@
-import { ItemCategory } from "./item.model";
+import { ItemCategory } from "./Item.model";
 
 export class Toy {
     private type: string;

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+  <row>
+    <OrderID>5001</OrderID>
+    <Type>Plush Toy</Type>
+    <AgeGroup>13+</AgeGroup>
+    <Brand>FunTime</Brand>
+    <Material>Fabric</Material>
+    <BatteryRequired>Yes</BatteryRequired>
+    <Educational>Yes</Educational>
+    <Price>247</Price>
+    <Quantity>7</Quantity>
+  </row>
+
+  <!-- Whitespace and empty strings -->
+  <row>
+    <OrderID>5002</OrderID>
+    <Type> </Type>
+    <AgeGroup></AgeGroup>
+    <Brand>BuildSmart</Brand>
+    <Material>Plastic</Material>
+    <BatteryRequired>yes</BatteryRequired>
+    <Educational>YES</Educational>
+    <Price>0</Price>
+    <Quantity>0</Quantity>
+  </row>
+
+  <!-- Invalid boolean values and negative price -->
+  <row>
+    <OrderID>5003</OrderID>
+    <Type>Action Figure</Type>
+    <AgeGroup>4-7</AgeGroup>
+    <Brand>FunTime</Brand>
+    <Material>Foam</Material>
+    <BatteryRequired>Sometimes</BatteryRequired>
+    <Educational>Maybe</Educational>
+    <Price>-100</Price>
+    <Quantity>1</Quantity>
+  </row>
+
+  <!-- Extremely large values -->
+  <row>
+    <OrderID>5004</OrderID>
+    <Type>Doll</Type>
+    <AgeGroup>8-12</AgeGroup>
+    <Brand>Adventure Co.</Brand>
+    <Material>Plastic</Material>
+    <BatteryRequired>No</BatteryRequired>
+    <Educational>No</Educational>
+    <Price>99999999</Price>
+    <Quantity>999999</Quantity>
+  </row>
+
+  <!-- Invalid characters & format injection -->
+  <row>
+    <OrderID>5005</OrderID>
+    <Type><![CDATA[<script>alert("xss")</script>]]></Type>
+    <AgeGroup>13+</AgeGroup>
+    <Brand>ToyLand & Co.</Brand>
+    <Material>Plastic</Material>
+    <BatteryRequired>No</BatteryRequired>
+    <Educational>No</Educational>
+    <Price>187</Price>
+    <Quantity>6</Quantity>
+  </row>
+
+  <!-- Duplicate OrderID -->
+  <row>
+    <OrderID>5001</OrderID>
+    <Type>Puzzle</Type>
+    <AgeGroup>5-10</AgeGroup>
+    <Brand>MindGames</Brand>
+    <Material>Wood</Material>
+    <BatteryRequired>No</BatteryRequired>
+    <Educational>Yes</Educational>
+    <Price>56</Price>
+    <Quantity>3</Quantity>
+  </row>
+
+  <!-- Missing fields -->
+  <row>
+    <OrderID>5007</OrderID>
+    <Type>Board Game</Type>
+    <Brand>FunHouse</Brand>
+    <Material>Cardboard</Material>
+    <!-- Missing BatteryRequired, Educational, AgeGroup -->
+    <Price>82</Price>
+    <Quantity>4</Quantity>
+  </row>
+
+  <!-- Incorrect data types -->
+  <row>
+    <OrderID>5008</OrderID>
+    <Type>Robot Toy</Type>
+    <AgeGroup>3+</AgeGroup>
+    <Brand>AutoFun</Brand>
+    <Material>Metal</Material>
+    <BatteryRequired>true</BatteryRequired>
+    <Educational>false</Educational>
+    <Price>abc</Price>
+    <Quantity>five</Quantity>
+  </row>
+</data>

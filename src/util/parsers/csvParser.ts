@@ -17,7 +17,7 @@ export async function readCSVFile(filePath: string, includeHeafer: boolean = fal
                 skip_empty_lines: true,
             }, (err, records: string[][]) => {
                 if (err) reject(err);
-                if (includeHeafer) records.shift();
+                if (!includeHeafer) records.shift();
                 resolve(records);
         });
     });

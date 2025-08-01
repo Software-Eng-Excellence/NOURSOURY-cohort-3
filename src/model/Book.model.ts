@@ -1,4 +1,4 @@
-import { Item, ItemCategory } from "./item.model";
+import { Item, ItemCategory } from "./IItem";
 
 type BookGenre = "Science Fiction" | "Thriller" | "Biography" | "Mystery" | "Fantasy" | "Romance" | "Historical Fiction";
 

@@ -1,8 +1,8 @@
-import { Item, ItemCategory } from "./Item.model";
+import { IItem, ItemCategory } from "./IItem";
 
 export type BookGenre = "Science Fiction" | "Thriller" | "Biography" | "Mystery" | "Fantasy" | "Romance" | "Historical Fiction";
 
-export class Book implements Item {
+export class Book implements IItem {
     private bookTitle: string;
     private author: string;
     private genre: BookGenre;

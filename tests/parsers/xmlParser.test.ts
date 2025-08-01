@@ -1,4 +1,4 @@
-import { readXMLFile, writeXMLFile } from '../src/util/parsers/xmlParser';
+import { readXMLFile, writeXMLFile } from '../../src/util/parsers/xmlParser';
 import { promises as fs } from 'fs';
 import path from 'path';
 import os from 'os';

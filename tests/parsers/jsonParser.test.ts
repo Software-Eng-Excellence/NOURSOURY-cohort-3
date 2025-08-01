@@ -1,6 +1,6 @@
 // tests/jsonParser.test.ts
 
-import { readJSONFile, writeJSONFile } from '../src/util/parsers/jsonParser';
+import { readJSONFile, writeJSONFile } from '../../src/util/parsers/jsonParser';
 import { promises as fs } from 'fs';
 import path from 'path';
 

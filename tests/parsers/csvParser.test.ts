@@ -1,4 +1,4 @@
-import { readCSVFile, writeCSVFile } from '../src/util/parsers/csvParser';
+import { readCSVFile, writeCSVFile } from '../../src/util/parsers/csvParser';
 import { promises as fs, read } from 'fs';
 import path from 'path';
 

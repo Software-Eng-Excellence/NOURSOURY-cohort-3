@@ -5,7 +5,7 @@ export type BookGenre = "Science Fiction" | "Thriller" | "Biography" | "Mystery"
 export class Book implements IItem {
     private bookTitle: string;
     private author: string;
-    private genre: BookGenre;
+    private genre: string;
     private format: string;
     private language: string;
     private publisher: string;
@@ -15,7 +15,7 @@ export class Book implements IItem {
     constructor(
         bookTitle: string,
         author: string,
-        genre: BookGenre,
+        genre: string,
         format: string,
         language: string,
         publisher: string,
@@ -43,7 +43,7 @@ export class Book implements IItem {
     getAuthor(): string {
         return this.author;
     }
-    getGenre(): BookGenre {
+    getGenre(): string {
         return this.genre;
     }
     getFormat(): string {

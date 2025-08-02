@@ -4,12 +4,16 @@ import { Book, BookGenre} from "../Book.model";
 export class BookBuilder {
     private bookTitle!: string;
     private author!: string;
-    private genre!: BookGenre;
+    private genre!: string;
     private format!: string;
     private language!: string;
     private publisher!: string;
     private specialEdition!: string;
     private packaging!: string;
+
+    public static newBuilder(): BookBuilder {
+        return new BookBuilder();
+    }
 
     setBookTitle(bookTitle: string): BookBuilder {
         this.bookTitle = bookTitle;
@@ -21,7 +25,7 @@ export class BookBuilder {
         return this;
     }
 
-    setGenre(genre: BookGenre): BookBuilder {
+    setGenre(genre: string): BookBuilder {
         this.genre = genre;
         return this;
     }

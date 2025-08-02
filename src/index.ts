@@ -1,18 +1,16 @@
 import logger from "./util/logger";
-import { Cake } from "model/Cake.model";
-import { readCSVFile } from "./util/parsers/csvParser";
-import { readJSONFile } from "./util/parsers/jsonParser";
-import { CSVCakeMapper } from "./mappers/Cake.mapper";
-import { CSVOrderMapper } from "./mappers/Order.mapper";
+import { CakeOrderRepository } from "./repository/file/CakeOrder.repository";
+import config from "./config";
 
 logger.info('App started');
 async function main() {
-    const data = await readCSVFile("src/data/cake-orders.csv");
-    const cakeMapper = new CSVCakeMapper();
-    const orderMapper = new CSVOrderMapper(cakeMapper);
-    const orders = data.map(orderMapper.map.bind(orderMapper));
+    const path = config.storagePath.csv.cake;
 
-    logger.info("list of orders: \n %o", orders);
+    const repository = new CakeOrderRepository(path);
+    const data = await repository.get("17");
+
+
+    logger.info("list of orders: \n %o", data);
 }
 
 main();

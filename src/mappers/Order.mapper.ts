@@ -10,11 +10,20 @@ export class CSVOrderMapper implements IMapper<string[], IOrder> {
     map(data: string[]): IOrder {
         const item: IItem = this.itemMapper.map(data);
         return OrderBuilder.newBuilder()
-                            .setId(data[0])
-                            .setQuantity(parseInt(data[data.length -1]))
-                            .setPrice(parseInt(data[data.length -2]))
-                            .setItem(item)
-                            .build();
+        .setId(data[0])
+        .setQuantity(parseInt(data[data.length -1]))
+        .setPrice(parseInt(data[data.length -2]))
+        .setItem(item)
+        .build();
     }
-
+    reverseMap(data: IOrder): string[] {
+        const item = this.itemMapper.reverseMap(data.getItem());
+        return [
+            data.getId(),
+            ...item,
+            data.getPrice().toString(),
+            data.getQuantity().toString()
+        ]
+    }
+    
 }
